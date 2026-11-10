@@ -1,0 +1,15 @@
+[build]
+  publish = "." # Change this to your build output folder (e.g., "dist" or "build") if using a build script
+
+# Fix "Page Not Found" errors on refresh or deep links
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Enable SharedArrayBuffer for PPSSPP WebAssembly threads
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Embedder-Policy = "require-corp"
